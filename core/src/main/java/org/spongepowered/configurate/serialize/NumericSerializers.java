@@ -91,7 +91,7 @@ final class NumericSerializers {
      * @return if the number can be represented as a float
      */
     private static boolean canRepresentDoubleAsFloat(final double test) {
-        if (!Double.isFinite(test)) { // NaN, ±inf
+        if (test == 0.0 || !Double.isFinite(test)) { // zero, NaN, ±inf
             return true;
         }
 
